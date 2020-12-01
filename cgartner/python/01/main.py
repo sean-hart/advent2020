@@ -201,19 +201,34 @@ input = """1864
 
 input_list = input.splitlines()
 
-def calculate_numbers(input, sum):
-    input_list = input.splitlines()
+def calculate_two_numbers(input_list, sum):
     for i in input_list:
         for j in input_list:
             if int(i) + int(j) == sum:
                 return [int(i), int(j)]
 
-numbers = calculate_numbers(input, 2020)
+numbers = calculate_two_numbers(input_list, 2020)
 product = numbers[0] * numbers[1]
 print(f"Our numbers are {numbers}")
 print(f"Added together they equal {sum(numbers)}")
 print(f"Multiplied together they equal {product}")
 
+def calculate_three_numbers(input_list, sum):
+    for i in input_list:
+        for j in input_list:
+            for k in input_list:
+                if int(i) + int(j) + int(k) == sum:
+                    return [int(i), int(j), int(k)]
+
+numbers2 = calculate_three_numbers(input_list, 2020)
+product2 = numbers2[0] * numbers2[1] * numbers2[2]
+print(f"Part two numbers are {numbers2}")
+print(f"Part two: Added together they equal {sum(numbers2)}")
+print(f"Part two: Multiplied together they equal {product2}")
+
 # Our numbers are [1204, 816]
 # Added together they equal 2020
 # Multiplied together they equal 982464
+# Part two numbers are [490, 261, 1269]
+# Part two: Added together they equal 2020
+# Part two: Multiplied together they equal 162292410
