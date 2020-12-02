@@ -14,7 +14,7 @@ def parse_test(test):
 
 
 def is_valid_password(test):
-    return test.password[test.pos1] == test.char) ^ (test.password[test.pos2] == test.char
+    return (test.password[test.pos1] == test.char) ^ (test.password[test.pos2] == test.char)
 
 
 if __name__ == '__main__':
