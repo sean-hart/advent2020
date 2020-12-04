@@ -31,5 +31,4 @@ if __name__ == '__main__':
     with open(PASSPORT_FILE) as f:
         raw_passports = f.read().split('\n\n')
 
-    print(len([p for p in raw_passports
-               if is_valid_passport(parse_passport(p))]))
+    print(len([p for p in raw_passports if is_valid_passport(parse_passport(p))]))
