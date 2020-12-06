@@ -25,7 +25,5 @@ def parse_boarding_passes(input_file):
 
 
 if __name__ == '__main__':
-    occupied = reduce(lambda accum, e: accum | 2 ** e.seat,
-                      parse_boarding_passes(INPUT_FILE), key=lambda e: e.seat)
-    print(occupied)
+    print(max(parse_boarding_passes(INPUT_FILE), key=lambda e: e.seat).seat)
 
