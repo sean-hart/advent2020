@@ -16,13 +16,13 @@ def parse_rule(rule):
 
 
 def solution(rules):
-    def find_gold(holds_gold, bag, path=[]):
+    def find_gold(holds_gold, bag, path=set()):
         if bag == GOLD:
-            return holds_gold.union(set(path))
+            return holds_gold | path
         elif not rules[bag]:
             return holds_gold
         else:
-            results = [find_gold(holds_gold, content, path + [bag]) for content in rules[bag]]
+            results = [find_gold(holds_gold, content, path | {bag}) for content in rules[bag]]
             return holds_gold.union(*results)
 
     return len(reduce(find_gold, rules, set()))
