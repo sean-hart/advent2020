@@ -372,7 +372,7 @@ different_slopes_for_different_flopes = [
             {'right': 7, "down": 1},
             {'right': 1, "down": 2},
         ],
-        'expected': 1,
+        'expected': 1478615040,
     },
 ]
 
