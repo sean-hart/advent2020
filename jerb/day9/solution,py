@@ -1,0 +1,50 @@
+#!/usr/local/bin/python3
+
+GROUP_SIZE = 25
+
+
+def has_sum_property(numbers, target):
+    seen = set()
+
+    for n in numbers:
+        if target - n in seen:
+            return True
+        seen.add(n)
+
+    return False
+
+
+def part1(numbers):
+    for n in range(GROUP_SIZE, len(numbers)):
+        if not has_sum_property(numbers[n - GROUP_SIZE:n], numbers[n]):
+            return n
+
+    raise ValueError('expected sum not found')
+
+
+def part2(numbers, target):
+    s = 0
+    left = 0
+    right = 1
+    s = sum(numbers[left:right])
+
+    while s != target:
+        while s < target:
+            s += numbers[right]
+            right += 1
+        while s > target:
+            s -= numbers[left]
+            left += 1
+
+    sum_range = numbers[left:right]
+    return min(sum_range) + max(sum_range)
+
+
+if __name__ == '__main__':
+    with open('input.txt') as f:
+        numbers = [int(n) for n in f.readlines()]
+
+    missing_index = part1(numbers)
+    print(numbers[missing_index])
+    print(part2(numbers, numbers[missing_index]))
+
