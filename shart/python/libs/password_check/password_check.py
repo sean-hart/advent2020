@@ -29,7 +29,6 @@ def validate_password_for_position(input_string):
         return False
 
 def validate_passwords_for_position(input_string):
-    print(input_string)
     valid_count = 0
     for line in input_string.splitlines():
         if validate_password_for_position(line):

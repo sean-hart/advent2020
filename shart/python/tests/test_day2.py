@@ -1059,7 +1059,7 @@ validate_multiple_testcases = [
         'description': "challenge input",
         'input': challenge_input,
         'expected_count': 628, #actual answer for my input
-        'expected_position': 0,
+        'expected_position': 705,
     },
 ]
 
