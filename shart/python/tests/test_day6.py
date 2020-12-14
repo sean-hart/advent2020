@@ -2085,7 +2085,7 @@ b""",
     {
         'input': challenge_input,
         'expected': 6782,
-        'expected2': 0
+        'expected2': 3596
     }
 ]
 
