@@ -51,25 +51,13 @@ def walk_parent_relationship(rules, bag, collected):
 
 def child_bags(rules, my_bag):
     parsed_rules = parse_rules(rules)
-    total_children = count_walk_child_relationship(parsed_rules, my_bag, 0)
+    total_children = count_walk_child_relationship(parsed_rules, my_bag)
     return total_children
 
-def count_walk_child_relationship(rules, bag, total):
-    print(total)
+def count_walk_child_relationship(rules, bag):
+    total = 0
     if len(rules[bag]['children']) == 0:
         return 0
     for child in rules[bag]['children']:
-        print(child)
-        total += child[0]
-        total += count_walk_child_relationship(rules, child[1], total)
-    print(total)
+        total += child[0] * count_walk_child_relationship(rules, child[1]) + child[0]
     return total
-
-
-1
-- 1
-- - 3
-- - 4
-- 2
-- - 5
-- - 6

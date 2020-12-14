@@ -6,6 +6,14 @@ import pytest
 
 from libs.baggage.baggage import parent_bags, child_bags
 
+simple_input = '''shiny gold bags contain 1 dark olive bag, 2 dotted black bags.
+dotted black bags contain no other bags.
+dark olive bags contain no other bags.'''
+
+simple_input2 = '''shiny gold bags contain 1 dark olive bag, 2 dotted black bags.
+dotted black bags contain no other bags.
+dark olive bags contain 4 dotted black bags.'''
+
 given_input = '''light red bags contain 1 bright white bag, 2 muted yellow bags.
 dark orange bags contain 3 bright white bags, 4 muted yellow bags.
 bright white bags contain 1 shiny gold bag.
@@ -632,6 +640,14 @@ testcases = [
 
 testcases2 = [
     {
+        'rules': simple_input,
+        'expected': 3,
+    },
+    {
+        'rules': simple_input2,
+        'expected': 7
+    },
+    {
         'rules': given_input,
         'expected': 32,
     },
@@ -641,7 +657,7 @@ testcases2 = [
     },
     {
         'rules': challenge_input,
-        'expected': 0,
+        'expected': 82930,
     },
 ]
 
