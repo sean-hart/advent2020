@@ -19,10 +19,9 @@ def parse_orders(lines):
 
 
 def rotate(direction, degree):
-    x, y = direction
     for _ in range(int((degree % 360)/90)):
-        x, y = -y, x
-    return x, y
+        direction = -direction[1], direction[0]
+    return direction
 
 
 def sail(orders):

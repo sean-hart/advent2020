@@ -17,10 +17,9 @@ def parse_orders(lines):
 
 
 def rotate(waypoint, degree):
-    x, y = waypoint
     for _ in range(int((degree % 360)/90)):
-        x, y = -y, x
-    return x, y
+        waypoint = -waypoint[1], waypoint[0]
+    return waypoint
 
 
 def sail(orders):
