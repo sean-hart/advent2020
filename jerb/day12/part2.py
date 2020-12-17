@@ -17,7 +17,7 @@ def parse_orders(lines):
 
 
 def rotate(waypoint, degree):
-    for _ in range(int((degree % 360)/90)):
+    for _ in range((degree % 360) // 90):
         waypoint = -waypoint[1], waypoint[0]
     return waypoint
 

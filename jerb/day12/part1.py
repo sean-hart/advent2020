@@ -19,7 +19,7 @@ def parse_orders(lines):
 
 
 def rotate(direction, degree):
-    for _ in range(int((degree % 360)/90)):
+    for _ in range((degree % 360) // 90):
         direction = -direction[1], direction[0]
     return direction
 
