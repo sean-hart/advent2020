@@ -1,6 +1,7 @@
 from functools import reduce
 # Taken from https://rosettacode.org/wiki/Chinese_remainder_theorem#Python_3.6
 
+
 def chinese_remainder(n, a):
     sum = 0
     prod = reduce(lambda a, b: a*b, n)
@@ -8,7 +9,6 @@ def chinese_remainder(n, a):
         p = prod // n_i
         sum += a_i * mul_inv(p, n_i) * p
     return sum % prod
-
 
 
 def mul_inv(a, b):
