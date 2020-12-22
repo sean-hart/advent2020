@@ -1056,10 +1056,12 @@ test_cases2 = [
     }, 
 ]
 
-for tc in test_cases:
-    actual, _ = check_cipher(tc['input'], tc['preamble'])
-    assert tc['expected'] == actual
+def test_day9_1():
+    for tc in test_cases:
+        actual, _ = check_cipher(tc['input'], tc['preamble'])
+        assert tc['expected'] == actual
 
-for tc in test_cases2:
-    actual = find_weakness(tc['input'], tc['preamble'])
-    assert tc['expected'] == actual
+def test_day9_2():
+    for tc in test_cases2:
+        actual = find_weakness(tc['input'], tc['preamble'])
+        assert tc['expected'] == actual
