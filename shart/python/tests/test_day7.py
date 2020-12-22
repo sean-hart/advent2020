@@ -661,10 +661,12 @@ testcases2 = [
     },
 ]
 
-for tc in testcases:
-    actual = parent_bags(tc['rules'], 'shinygoldbag')
-    assert tc['expected'] == actual
+def test_day7_1():
+    for tc in testcases:
+        actual = parent_bags(tc['rules'], 'shinygoldbag')
+        assert tc['expected'] == actual
 
-for tc in testcases2:
-    actual = child_bags(tc['rules'], 'shinygoldbag')
-    assert tc['expected'] == actual
+def test_day7_2():
+    for tc in testcases2:
+        actual = child_bags(tc['rules'], 'shinygoldbag')
+        assert tc['expected'] == actual
